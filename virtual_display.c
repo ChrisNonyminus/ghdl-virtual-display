@@ -44,7 +44,7 @@ void save_screenshot(int32_t *ptr, uint32_t width, uint32_t height, int id) {
     int x_pos = (xres-width)/2;
     int y_pos = (yres-height)/2;
     int p = 0;
-            SDL_SetTextureUserData(pixmap, ptr);
+    SDL_UpdateTexture(pixmap, NULL, ptr, 4);
     SDL_RenderCopy(r, pixmap, NULL, NULL);
     SDL_DestroyTexture(pixmap);
 }
