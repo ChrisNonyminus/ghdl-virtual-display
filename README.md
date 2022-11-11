@@ -1,2 +1,2 @@
 # ghdl-virtual-display
-Virtual Display (X11) for GHDL test benches.
+Virtual Display (SDL2) for GHDL test benches.
