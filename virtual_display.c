@@ -31,10 +31,10 @@ void sim_init(uint32_t width, uint32_t height) {
     SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
     SDL_SetWindowTitle(w, "Virtual Display");
     
-    while (1) {
-      SDL_PollEvent(&e);
-      if (e.type == SDL_QUIT) { break; }
-   }
+//     while (1) {
+//       SDL_PollEvent(&e);
+//       if (e.type == SDL_QUIT) { break; }
+//    }
 }
 
 
@@ -46,6 +46,7 @@ void save_screenshot(int32_t *ptr, uint32_t width, uint32_t height, int id) {
     int p = 0;
     SDL_UpdateTexture(pixmap, NULL, ptr, 4);
     SDL_RenderCopy(r, pixmap, NULL, NULL);
+    SDL_RenderPresent(r);
     SDL_DestroyTexture(pixmap);
 }
 
