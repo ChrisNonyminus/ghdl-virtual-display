@@ -20,8 +20,8 @@ static uint yres;
 
 void sim_init(uint32_t width, uint32_t height) {
     SDL_Init(SDL_INIT_EVERYTHING);
-    xres = width;
-    yres = height;
+    xres = width * 4;
+    yres = height * 4;
     
     SDL_CreateWindowAndRenderer(xres, yres, SDL_WINDOW_OPENGL, &w, &r);
     if (w == NULL) {
